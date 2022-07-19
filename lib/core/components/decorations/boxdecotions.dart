@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsapp/core/constants/radius/radiuConst.dart';
 
 class BoxDecorations {
   static boxALLdecorations({Color bordercolor = Colors.transparent,List<BoxShadow> shadow = const [],Color color = Colors.white, double borderRadius = RadiuConst.medium}) {
     return BoxDecoration(
         boxShadow: shadow,
-        border: Border.all(color: bordercolor, width: 0.5),
+        border: Border.all(color: bordercolor, width: 0.5.sp),
         color: color, borderRadius: BorderRadius.circular(borderRadius));
   }
 

@@ -7,4 +7,6 @@ abstract class IconConst {
   static SvgPicture profile = SvgPicture.asset('assets/icons/profile.svg');
   static SvgPicture favorite = SvgPicture.asset('assets/icons/favorite.svg');
   static SvgPicture favoriteRed = SvgPicture.asset('assets/icons/favorite_red.svg');
+  static SvgPicture search = SvgPicture.asset('assets/icons/search.svg');
+  static SvgPicture notification = SvgPicture.asset('assets/icons/notification.svg');
 }
