@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/core/constants/color/colorConst.dart';
 import 'package:newsapp/core/constants/font/fontSizeConst.dart';
 
 abstract class FontStyles {
@@ -9,6 +10,8 @@ abstract class FontStyles {
   static const TextStyle headline4s =
       TextStyle(fontSize: FontSizeConst.mmedium);
   static const TextStyle headline5s = TextStyle(fontSize: FontSizeConst.medium);
+  static const TextStyle headline5sbold = TextStyle(fontSize: FontSizeConst.medium, fontWeight: FontWeight.bold);
   static const TextStyle headline6s = TextStyle(fontSize: FontSizeConst.msmall);
+  static const TextStyle headline6sblue = TextStyle(fontSize: FontSizeConst.msmall, color: ColorConst.kSecondary);
   static const TextStyle headline7s = TextStyle(fontSize: FontSizeConst.small);
 }

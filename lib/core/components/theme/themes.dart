@@ -7,6 +7,7 @@ class Allthemes {
   Allthemes.init();
 
   ThemeData get apptheme => ThemeData(
+    fontFamily: 'new york',
     useMaterial3: true,
     colorScheme: const ColorScheme.light(
       primary: ColorConst.kPrimary,
