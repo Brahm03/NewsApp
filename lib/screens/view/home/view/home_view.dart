@@ -3,6 +3,7 @@ import 'package:newsapp/core/constants/PM/PMconst.dart';
 import 'package:newsapp/core/constants/color/colorConst.dart';
 import 'package:newsapp/core/constants/icons/iconConst.dart';
 import 'package:newsapp/core/constants/radius/radiuConst.dart';
+import 'package:newsapp/screens/view/home/cubit/home_cubit.dart';
 import 'package:newsapp/screens/view/home/widget/searchBar.dart';
 
 class HomeView extends StatelessWidget {
@@ -10,6 +11,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    HomeCubit.getData();
     return Scaffold(
       body: SafeArea(
         child: Padding(

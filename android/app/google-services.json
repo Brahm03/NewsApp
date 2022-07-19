@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "524695270910",
+    "project_id": "newsapp-5aba4",
+    "storage_bucket": "newsapp-5aba4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524695270910:android:c3c2d0844d7a540b527caf",
+        "android_client_info": {
+          "package_name": "com.ajmal.newsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524695270910-acnnqok477liql5teqe9hb8denapa73c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ajmal.newsapp",
+            "certificate_hash": "017e22a46ffe47d2679d693c13634e03cc5e045a"
+          }
+        },
+        {
+          "client_id": "524695270910-h1o7g52nrp262u5qct81755780m44v69.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6a-KP7YDJ6SxxwofBYlh2L-9z-0lOL0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524695270910-h1o7g52nrp262u5qct81755780m44v69.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "524695270910-kn5uuc8383lb4e3p9f7g9r3ljces1fn5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ajmal.newsapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
