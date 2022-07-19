@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsapp/core/components/theme/themes.dart';
 import 'package:newsapp/routes/allroutes.dart';
 
@@ -15,12 +16,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: Allthemes.instance.apptheme,
-      initialRoute: '/',
-      onGenerateRoute: Allroutes.instance.ongenerateRoute
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      builder: (context, child) => MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: Allthemes.instance.apptheme,
+          initialRoute: '/',
+          onGenerateRoute: Allroutes.instance.ongenerateRoute),
     );
   }
 }
