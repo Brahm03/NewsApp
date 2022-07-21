@@ -22,16 +22,23 @@ class NavigationBarWidget extends StatelessWidget {
           color: ColorConst.white,
           borderRadius: RadiuConst.extraLarge,
         ),
-        child: ListView.builder(physics: const NeverScrollableScrollPhysics(),scrollDirection: Axis.horizontal,itemCount: 3,itemBuilder: (_, __) {
-          return Padding(
-            padding: EdgeInsets.only(left: 34.sp),
-            child: InkWell(
-              onTap: () => context.read<MainCubit>().changePage(__),
-              child: Column(
-                children: [context.watch<MainCubit>().icons[__], Text(context.watch<MainCubit>().titles[__])],
-              ),
-            ),
-          );
-        }));
+        child: ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            itemCount: 3,
+            itemBuilder: (_, __) {
+              return Padding(
+                padding: EdgeInsets.only(left: 34.sp),
+                child: InkWell(
+                  onTap: () => context.read<MainCubit>().changePage(__),
+                  child: Column(
+                    children: [
+                      context.watch<MainCubit>().icons[__],
+                      Text(context.watch<MainCubit>().titles[__])
+                    ],
+                  ),
+                ),
+              );
+            }));
   }
 }

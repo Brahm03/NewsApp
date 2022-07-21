@@ -52,7 +52,15 @@ class HomeView extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                InkWell(onTap: () => NavigationService.instance.pushNamed(routeName: '/search_view'),child: SearchBarWidget(height: 32.sp,width: 296.sp,text: 'Dogecoin to the Moon...',icon: IconConst.search,)),
+                                InkWell(
+                                    onTap: () => NavigationService.instance
+                                        .pushNamed(routeName: '/search_view'),
+                                    child: SearchBarWidget(
+                                      height: 32.sp,
+                                      width: 296.sp,
+                                      text: 'Dogecoin to the Moon...',
+                                      icon: IconConst.search,
+                                    )),
                                 const Spacer(),
                                 CircleAvatar(
                                   radius: RadiuConst.medium,
@@ -85,6 +93,10 @@ class HomeView extends StatelessWidget {
                             ),
                             SizedBox(height: 16.sp),
                             SizedBox(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
                               height: 245.sp,
                               child: ListView.builder(
                                   scrollDirection: Axis.horizontal,
@@ -92,12 +104,18 @@ class HomeView extends StatelessWidget {
                                   itemBuilder: (_, __) {
                                     return Padding(
                                       padding: EdgeInsets.only(left: 10.sp),
-                                      child: NewsWidget(
-                                          index: __,
-                                          by: data[__]['by'],
-                                          subtitle: data[__]['subtitle'],
-                                          title: data[__]['title'],
-                                          pic: data[__]['pic']),
+                                      child: InkWell(
+                                        onTap: () => NavigationService.instance
+                                            .pushNamed(
+                                                routeName: '/info_view',
+                                                args: data[__]),
+                                        child: NewsWidget(
+                                            index: __,
+                                            by: data[__]['by'],
+                                            subtitle: data[__]['subtitle'],
+                                            title: data[__]['title'],
+                                            pic: data[__]['pic']),
+                                      ),
                                     );
                                   }),
                             ),
@@ -128,9 +146,10 @@ class HomeView extends StatelessWidget {
                                                     .catogs[__],
                                                 style: context
                                                             .watch<HomeCubit>()
-                                                            .catogs ==
+                                                            .currentcatog ==
                                                         __
-                                                    ? FontStyles.headline5sboldWhite
+                                                    ? FontStyles
+                                                        .headline5sboldWhite
                                                     : FontStyles.headline5s,
                                               ))),
                                     );
@@ -140,12 +159,27 @@ class HomeView extends StatelessWidget {
                             SizedBox(
                               height: context.h,
                               width: context.w,
-                              child: ListView.builder(physics: const NeverScrollableScrollPhysics(),itemCount: data.length,itemBuilder: (_, __) {
-                                return Padding(
-                                  padding: EdgeInsets.only(bottom: 16.sp),
-                                  child: NewsWidgetSecond(by: data[__]['by'],title: data[__]['title'],pic: data[__]['pic']),
-                                );
-                              }),
+                              child: ListView.builder(
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  itemCount: data.length,
+                                  itemBuilder: (_, __) {
+                                    return Padding(
+                                      padding: EdgeInsets.only(bottom: 16.sp),
+                                      child: InkWell(
+                                          onTap: () => NavigationService
+                                              .instance
+                                              .pushNamed(
+                                                  routeName: '/info_view',
+                                                  args: data[__]),
+                                          child: NewsWidgetSecond(
+                                              by: data[__]['by'],
+                                              title: data[__]['title'],
+                                              pic: data[__]['pic'])),
+                                    );
+                                  }),
+                            )
+                                ],
+                              ),
                             )
                           ],
                         ),

@@ -20,7 +20,7 @@ class MainCubit extends Cubit<MainState> {
       case 1:
         return emit(FavoriteState());
       case 2:
-        return emit(ProfileState());  
+        return emit(ProfileState());
     }
   }
 }

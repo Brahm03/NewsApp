@@ -14,7 +14,7 @@ return navigatorKey.currentState!
  Future<dynamic> pushNamedReplacementNamed(String routeName) {
   return navigatorKey.currentState!.pushReplacementNamed(routeName);
 }
-void pop(String routeName) {
+void pop() {
  return navigatorKey.currentState!.pop();
  }
 }

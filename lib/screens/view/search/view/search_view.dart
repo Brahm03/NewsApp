@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsapp/core/components/decorations/boxdecotions.dart';
+import 'package:newsapp/core/components/navigation/navigation_service.dart';
 import 'package:newsapp/core/constants/color/colorConst.dart';
 import 'package:newsapp/core/constants/font/fontStyleConst.dart';
 import 'package:newsapp/screens/state/state.dart';
@@ -73,23 +74,26 @@ class SearchView extends StatelessWidget {
                           itemBuilder: (_, __) {
                             return Padding(
                               padding: EdgeInsets.only(bottom: 10.sp),
-                              child: NewsWidgetSecond(
-                                  pic: context
-                                      .watch<SearchCubit>()
-                                      .temp
-                                      .toList()[__]['pic'],
-                                  title: context
-                                      .watch<SearchCubit>()
-                                      .temp
-                                      .toList()[__]['title'],
-                                  by: context
-                                      .watch<SearchCubit>()
-                                      .temp
-                                      .toList()[__]['by']),
+                              child: InkWell(
+                                onTap: () => NavigationService.instance.pushNamed(routeName: '/info_view', args: BlocProvider.of<SearchCubit>(context, listen: false).temp.toList()[__]),
+                                child: NewsWidgetSecond(
+                                    pic: context
+                                        .watch<SearchCubit>()
+                                        .temp
+                                        .toList()[__]['pic'],
+                                    title: context
+                                        .watch<SearchCubit>()
+                                        .temp
+                                        .toList()[__]['title'],
+                                    by: context
+                                        .watch<SearchCubit>()
+                                        .temp
+                                        .toList()[__]['by']),
+                              ),
                             );
                           }),
                     )
-                  : SizedBox()
+                  : const SizedBox()
             ],
           ),
         )),

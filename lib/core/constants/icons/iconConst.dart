@@ -15,4 +15,8 @@ abstract class IconConst {
   static SvgPicture notification =
       SvgPicture.asset('assets/icons/notification.svg');
   static const rightarrow = CupertinoIcons.chevron_right;
+  static SvgPicture leftArrow =
+      SvgPicture.asset('assets/icons/left_arrow.svg');
+      static SvgPicture heart =
+      SvgPicture.asset('assets/icons/heart.svg');
 }
