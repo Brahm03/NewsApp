@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp/screens/mainview.dart';
+import 'package:newsapp/screens/view/search/view/search_view.dart';
 
 class Allroutes {
   static final Allroutes _instance = Allroutes.init();
@@ -11,8 +13,10 @@ class Allroutes {
     switch (settings.name) {
       case '/':
         return pageReturner(const MainView());
+      case '/search_view':
+        return pageReturner(SearchView());
     }
   }
 
-  pageReturner(Widget page) => MaterialPageRoute(builder: (_) => page);
+  pageReturner(Widget page) => CupertinoPageRoute(builder: (_) => page);
 }

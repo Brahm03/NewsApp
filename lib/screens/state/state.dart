@@ -1,16 +1,19 @@
 abstract class MainState {
-   MainState();
+  MainState();
 }
 
-class HomeState extends MainState{
-   HomeState();
+class HomeState extends MainState {
+  HomeState();
 }
 
-
-class FavoriteState extends MainState{
-   FavoriteState();
+class FavoriteState extends MainState {
+  FavoriteState();
 }
 
-class ProfileState extends MainState{
-   ProfileState();
+class SearchState extends MainState{
+  SearchState();
+}
+
+class ProfileState extends MainState {
+  ProfileState();
 }

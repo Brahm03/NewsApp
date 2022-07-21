@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsapp/core/components/navigation/navigation_service.dart';
 import 'package:newsapp/core/components/theme/themes.dart';
 import 'package:newsapp/routes/allroutes.dart';
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
+          navigatorKey: NavigationService.instance.navigatorKey,
           theme: Allthemes.instance.apptheme,
           initialRoute: '/',
           onGenerateRoute: Allroutes.instance.ongenerateRoute),

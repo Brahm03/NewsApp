@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newsapp/core/components/navigation/navigation_service.dart';
 import 'package:newsapp/core/constants/PM/PMconst.dart';
 import 'package:newsapp/core/constants/color/colorConst.dart';
 import 'package:newsapp/core/constants/font/fontStyleConst.dart';
@@ -51,7 +52,7 @@ class HomeView extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                SearchBarWidget(text: 'Dogecoin to the Moon...',icon: IconConst.search,),
+                                InkWell(onTap: () => NavigationService.instance.pushNamed(routeName: '/search_view'),child: SearchBarWidget(height: 32.sp,width: 296.sp,text: 'Dogecoin to the Moon...',icon: IconConst.search,)),
                                 const Spacer(),
                                 CircleAvatar(
                                   radius: RadiuConst.medium,
