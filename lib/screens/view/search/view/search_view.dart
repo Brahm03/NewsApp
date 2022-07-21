@@ -63,24 +63,35 @@ class SearchView extends StatelessWidget {
                       );
                     }),
               ),
-              SizedBox(height: 15.sp),
-              context.watch<SearchCubit>().catogs.isNotEmpty ? Expanded(
-                child: ListView.builder(
-                    itemCount: context.watch<SearchCubit>().temp.length,
-                    itemBuilder: (_, __) {
-                      return Padding(
-                        padding: EdgeInsets.only(bottom: 10.sp),
-                        child: NewsWidgetSecond(
-                            pic: context.watch<SearchCubit>().temp.toList()[__]
-                                ['pic'],
-                            title: context.watch<SearchCubit>().temp.toList()[__]
-                                ['title'],
-                            by: context.watch<SearchCubit>().temp.toList()[__]
-                                ['by']),
-                      );
-                    }),
-              ) 
-            : SizedBox()],
+              SizedBox(height: 20.sp),
+              Text(
+                  '${context.watch<SearchCubit>().temp.length} results for ${context.watch<SearchCubit>().searchedText}'),
+              SizedBox(height: 10.sp),
+              context.watch<SearchCubit>().catogs.isNotEmpty
+                  ? Expanded(
+                      child: ListView.builder(
+                          itemCount: context.watch<SearchCubit>().temp.length,
+                          itemBuilder: (_, __) {
+                            return Padding(
+                              padding: EdgeInsets.only(bottom: 10.sp),
+                              child: NewsWidgetSecond(
+                                  pic: context
+                                      .watch<SearchCubit>()
+                                      .temp
+                                      .toList()[__]['pic'],
+                                  title: context
+                                      .watch<SearchCubit>()
+                                      .temp
+                                      .toList()[__]['title'],
+                                  by: context
+                                      .watch<SearchCubit>()
+                                      .temp
+                                      .toList()[__]['by']),
+                            );
+                          }),
+                    )
+                  : SizedBox()
+            ],
           ),
         )),
       ),

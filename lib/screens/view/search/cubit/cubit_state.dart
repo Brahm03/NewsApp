@@ -7,6 +7,7 @@ class SearchCubit extends Cubit<SearchState> {
   SearchCubit() : super(SearchState());
 
   Set temp = {};
+  String searchedText = '';
 
   searchIt(String text) {
     temp.clear();
@@ -22,6 +23,7 @@ class SearchCubit extends Cubit<SearchState> {
           .contains(text.toString().toLowerCase())) {
         debugPrint(
             DataService.instance.dataList[currentcatog]['news'][i]['title']);
+        searchedText = text;
         temp.add(DataService.instance.dataList[currentcatog]['news'][i]);
         emit(SearchState());
       }
