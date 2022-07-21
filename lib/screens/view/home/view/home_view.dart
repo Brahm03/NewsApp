@@ -51,7 +51,7 @@ class HomeView extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                const SearchBarWidget(),
+                                SearchBarWidget(text: 'Dogecoin to the Moon...',icon: IconConst.search,),
                                 const Spacer(),
                                 CircleAvatar(
                                   radius: RadiuConst.medium,

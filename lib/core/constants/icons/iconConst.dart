@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
 
 abstract class IconConst {
+  static IconData x = CupertinoIcons.xmark;
   static SvgPicture homeRed = SvgPicture.asset('assets/icons/home_red.svg');
   static SvgPicture home = SvgPicture.asset('assets/icons/home.svg');
   static SvgPicture profileRed =
