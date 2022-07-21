@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsapp/core/components/decorations/boxdecotions.dart';
-import 'package:newsapp/core/constants/PM/PMconst.dart';
 import 'package:newsapp/core/constants/color/colorConst.dart';
 import 'package:newsapp/core/constants/font/fontStyleConst.dart';
-import 'package:newsapp/extension/sizeExtension.dart';
 import 'package:newsapp/screens/state/state.dart';
 import 'package:newsapp/screens/view/search/cubit/cubit_state.dart';
 import 'package:newsapp/widgets/newWidgetSecond.dart';
@@ -56,6 +54,7 @@ class SearchView extends StatelessWidget {
                                 label: Text(
                                   context.watch<SearchCubit>().catogs[__],
                                   style:
+                                      // ignore: unrelated_type_equality_checks
                                       context.watch<SearchCubit>().catogs == __
                                           ? FontStyles.headline5sboldWhite
                                           : FontStyles.headline5s,
